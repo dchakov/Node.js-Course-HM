@@ -3,7 +3,6 @@
 
     var formidable = require('formidable'),
         http = require('http'),
-        util = require('util'),
         port = 8080,
         uuid = require('uuid'),
         fs = require('fs-extra'),
@@ -22,8 +21,8 @@
                     'content-type': 'text/html'
                 });
                 res.write('<h4>Upload finished</h4>');
-                res.write('<div><a href="/">Back</a></div>');
-                res.write('<div><a href="/download">View last upload</a></div>');
+                res.write('<div><a href="/">Back</a></div><br>');
+                res.write('<div><a href="/download">Download last uploaded file</a></div>');
                 res.end();
             });
 
@@ -62,14 +61,12 @@
                     }
                     var fileName = filePath.substring(filePath.lastIndexOf('/') + 1);
                     fs.writeFile('downloads/' + fileName, fileText, function(err) {
-                      if (err) {
-                        console.log('File cannot be write: ' + err);
-                      }else{
-                        console.log('File downloaded')
-                      }
+                        if (err) {
+                            console.log('File cannot be write: ' + err);
+                        } else {
+                            console.log('File downloaded')
+                        }
                     })
-
-                    console.log(fileText);
                 });
         };
 
