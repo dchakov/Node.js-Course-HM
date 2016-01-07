@@ -15,6 +15,4 @@ var messageSchema = new mongoose.Schema({
     }
 });
 
-
-
 mongoose.model('Message', messageSchema);

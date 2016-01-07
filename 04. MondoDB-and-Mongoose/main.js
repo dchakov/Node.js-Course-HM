@@ -43,5 +43,4 @@
         with: 'DonchoMinkov',
         and: 'NikolayKostov'
     });
-
 }());
