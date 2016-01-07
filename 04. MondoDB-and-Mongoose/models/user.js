@@ -11,4 +11,11 @@ var userSchema = new mongoose.Schema({
     }
 });
 
+userSchema.path('user').validate(function(user) {
+    return user.length >= 2 && user.length < 30;
+});
+userSchema.path('pass').validate(function(pass) {
+    return pass.length >= 6 && pass.length < 30;
+});
+
 mongoose.model('User', userSchema);

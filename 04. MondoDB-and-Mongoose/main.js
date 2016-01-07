@@ -5,11 +5,11 @@
 
     //inserts a new user records into the DB
     chatDb.registerUser({
-        user: 'DonchoMinkov',
+        user: 'DonchoMinkov1',
         pass: '123456q'
     });
     chatDb.registerUser({
-        user: 'NikolayKostov',
+        user: 'NikolayKostov1',
         pass: '123456q'
     });
 

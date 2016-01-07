@@ -26,15 +26,15 @@
             .exec(function(err, users) {
                 if (err) throw err;
                 if (users.length !== 0) {
-                    throw {
-                        message: 'Username already exists'
-                    };
+                    throw  'Username already exists';
+                    return;
                 }
+                user.save(function(err) {
+                    if (err) throw err;
+                    console.log('User added');
+                });
             });
-        user.save(function(err) {
-            if (err) throw err;
-            console.log('User added');
-        });
+
     }
 
     function sendMessage(object) {
@@ -55,7 +55,7 @@
                 [{
                     from: object.with,
                     to: object.and
-                },{
+                }, {
                     from: object.and,
                     to: object.with
                 }])
