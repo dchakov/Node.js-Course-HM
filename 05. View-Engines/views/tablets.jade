@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	#wrapper
+		nav#main-nav
+			ol
+				each tablet in tablets
+					li
+						img.img-responsive(style="width: 100px" src=tablet.src)
+						p
+							=tablet.model
+						p
+							='Color: '+ tablet.color
+						p
+							='Capacity: '+ tablet.capacity
+						p
+							='Display: '+ tablet.display
+						p
+							='Price: '+ tablet.price

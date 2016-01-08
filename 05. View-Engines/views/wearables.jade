@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	#wrapper
+		nav#main-nav
+			ol
+				each wearable in wearables
+					li
+						img.img-responsive(style="width: 100px" src=wearable.src)
+						p
+							=wearable.model
+						p
+							='Color: '+ wearable.color
+						p
+							='Capacity: '+ wearable.capacity
+						p
+							='Display: '+ wearable.display
+						p
+							='Price: '+ wearable.price

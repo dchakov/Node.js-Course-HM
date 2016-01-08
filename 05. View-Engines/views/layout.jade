@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+	head
+		title Mobile devices shop
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
+	body
+		nav.navbar.navbar-default
+			div.container-fluid
+				div.navbar-header
+					button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+					each val in ['Home','Phones','Tablets','Wearables']
+						a(class="navbar-brand" href="/"+val.toLowerCase())
+							=val
+		
+		block content
+
+		footer
+			p.text-center
+				| Copyright &copy;
+			p.text-center
+				| Telerik Academy 2015/2016
