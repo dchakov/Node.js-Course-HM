@@ -1,0 +1,26 @@
+{
+  "name": "grunt-homework",
+  "version": "1.0.0",
+  "description": "1. Create a project with a Gruntfile.js and three folders � `DEV` folder, `APP` folder and `DIST` folder\r \t* Write some CoffeeScript, Jade and Stylus in `APP`\r \t* Register the following **grunt tasks**:\r \t\t* Serve:\r \t\t\t* **Compiles the CoffeeScript** to JS and puts them into `DEV/scripts`\r \t\t\t* Runs **jshint** on the compiled JS files\r \t\t\t* **Compiles the Jade** to HTML and puts them into `DEV`\r \t\t\t* **Compiles the Stylus** to CSS and puts them into `DEV/styles`\r \t\t\t* **Copies** every image from the `APP/images` to `DEV/images`\r \t\t\t* Connect a server on port 9578 and show the contents of `DEV`\r \t\t\t* **Watch for changes** to the CoffeeScript, Stylus and Jade files, and if changed � reload the page into the browser\r \t\t* Build:\r \t\t\t* Compiles CoffeeScript, Stylus and Jade\r \t\t\t* Runs **jshint** and **csslint**\r \t\t\t* **Concats all CSS files** into one file and **minify** it into `DIST/styles`\r \t\t\t* **Concats all JS files** into one file and **uglify** it into `DIST/scripts`\r \t\t\t* **Uglifies** the HTML files into `DIST`\r \t\t\t* **Copies** all images into `DIST/images`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-csslint": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-htmlmin": "^0.6.0",
+    "grunt-contrib-jade": "^0.15.0",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-stylus": "^0.22.0",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
