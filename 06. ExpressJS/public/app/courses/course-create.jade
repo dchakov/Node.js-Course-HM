@@ -6,19 +6,19 @@
                 .form-group
                     label.col-md-2.control-label(for="title") Title
                     .col-md-10
-                        input.form-control(type="text", placeholder="Title", ng-model="realEstate.title", required)
+                        input.form-control(type="text", placeholder="Title", ng-model="realEstate.title", required name="title")
                 .form-group
                     label.col-md-2.control-label(for="featured") Featured
                     .col-md-1
-                        input.form-control(type="checkbox", ng-model="realEstate.featured")
+                        input.form-control(type="checkbox", ng-model="realEstate.featured" name="featured")
                 .form-group
                     label.col-md-2.control-label(for="published") Published
                     .col-md-10
-                        input.form-control(type="text" class="form-control  form-validation" id="date" placeholder="Date Created (dd/mm/yyyy)" ng-model="realEstate.published")
+                        input.form-control(type="text" class="form-control  form-validation" id="date" placeholder="Date Created (dd/mm/yyyy)" ng-model="realEstate.published" name="published")
                 .form-group
                     label.col-md-2.control-label(for="town") Town
                     .col-md-10
-                        input.form-control(type="text", placeholder="Town", ng-model="realEstate.town", required)
+                        input.form-control(type="text", placeholder="Town", ng-model="realEstate.town", required name="town")
                 .form-group
                     label.col-md-2.control-label(for="picture") Picture
                     .col-md-10

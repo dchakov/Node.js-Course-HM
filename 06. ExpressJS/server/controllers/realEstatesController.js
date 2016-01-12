@@ -24,19 +24,21 @@ module.exports = {
     createRealEstate: function(req, res, next) {
         console.log(req.body);
         console.log(req.file);
-        RealEstate.create({
-            title: req.body.title,
-            featured: req.body.featured,
-            published: req.body.published,
-            town : req.body.town,
-            imgName: req.file.filename
-        }, function(err, realEstate) {
+        var real = new RealEstate();
+        real.title = req.body.title;
+        real.featured = req.body.featured;
+        real.published = req.body.published;
+        real.town = req.body.town;
+        real.imgName = req.file.filename;
+        real.save(function(err, realEstate) {
             if (err) {
                 console.log('Failed to create new : ' + err);
                 return;
             }
-            res.redirect('/realEstates');
+            console.log(realEstate);
+            res.redirect('http://localhost:3030/#/realEstates/' + realEstate._id);
         });
+
     },
     upload: function(req, res, next) {
         console.log(req.file);

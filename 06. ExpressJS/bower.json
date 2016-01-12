@@ -4,7 +4,7 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "components"
+    "lib"
   ],
   "dependencies": {
     "jquery": "~2.2.0",
