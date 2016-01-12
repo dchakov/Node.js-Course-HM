@@ -1,4 +1,4 @@
-app.controller('CourseDetailsCtrl', function($scope, $routeParams, cachedCourses) {
+app.controller('CourseDetailsCtrl', function($scope, $routeParams, $timeout, cachedCourses) {
     //$scope.course = CourseResource.get({id: $routeParams.id});
     $scope.course = cachedCourses.query().$promise.then(function(collection) {
         collection.forEach(function(course) {

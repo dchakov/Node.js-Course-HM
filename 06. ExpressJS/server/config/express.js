@@ -3,7 +3,16 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
-    passport = require('passport');
+    passport = require('passport'),
+    multer = require('multer'),
+    storage = multer.diskStorage({
+        destination: function(req, file, cb) {
+            cb(null, './public/app/images/')
+        },
+        filename: function(req, file, cb) {
+            cb(null, file.originalname)
+        }
+    });
 
 module.exports = function(app, config) {
     app.set('view engine', 'jade');
@@ -11,7 +20,8 @@ module.exports = function(app, config) {
     app.use(cookieParser());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({
-        extended: true
+        extended: true,
+        uploadDir: '/public/app/images/'
     }));
     app.use(session({
         resave: true,
@@ -24,6 +34,9 @@ module.exports = function(app, config) {
             return stylus(str).set('filename', path);
         }
     }));
+    app.use(multer({
+        storage: storage
+    }).single('picture'));
     app.use(passport.initialize());
     app.use(passport.session());
     app.use(express.static(config.rootPath + '/public'));

@@ -1,0 +1,30 @@
+.container
+    .well
+        form.form-horizontal(id='form', method='post', action='/api/realEstates', enctype='multipart/form-data' name="createForm")
+            fieldset
+                legend Create New Real Estate
+                .form-group
+                    label.col-md-2.control-label(for="title") Title
+                    .col-md-10
+                        input.form-control(type="text", placeholder="Title", ng-model="realEstate.title", required)
+                .form-group
+                    label.col-md-2.control-label(for="featured") Featured
+                    .col-md-1
+                        input.form-control(type="checkbox", ng-model="realEstate.featured")
+                .form-group
+                    label.col-md-2.control-label(for="published") Published
+                    .col-md-10
+                        input.form-control(type="text" class="form-control  form-validation" id="date" placeholder="Date Created (dd/mm/yyyy)" ng-model="realEstate.published")
+                .form-group
+                    label.col-md-2.control-label(for="town") Town
+                    .col-md-10
+                        input.form-control(type="text", placeholder="Town", ng-model="realEstate.town", required)
+                .form-group
+                    label.col-md-2.control-label(for="picture") Picture
+                    .col-md-10
+                        input.form-control(type="file" id="picture",name='picture')
+                .pull-right
+                    button.btn.btn-primary(ng-click="createRealEstate(realEstate)" , ng-disabled="createForm.$invalid" type="submit") Create
+                    a.btn.btn-primary(href="#/") Cancel
+                
+                        

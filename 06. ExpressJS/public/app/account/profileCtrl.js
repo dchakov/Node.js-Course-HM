@@ -8,6 +8,7 @@ app.controller('ProfileCtrl', function($scope, $location, auth, identity) {
         auth.update(user).then(function() {
             $scope.firstName = user.firstName;
             $scope.lastName = user.lastName;
+            $scope.password = user.password;
             $location.path('/');
         });
     }

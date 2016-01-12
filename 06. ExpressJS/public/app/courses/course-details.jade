@@ -1,5 +1,6 @@
 .container
     h2 {{ course.title }}
     p {{ course.published | date }}
-    ul
-        li(ng-repeat="tag in course.tags") {{ tag }}
+    p {{ course.town }}
+    .col-md-6.image-container
+        img.img-rounded(ng-src="http://localhost:3030/app/images/{{course.imgName}}" alt="{{course.imgName}}" width="250px")
